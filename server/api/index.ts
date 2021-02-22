@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import cors from 'cors'
+import { PostsController } from './controllers'
 
 const app = express()
 app.use(bodyParser.json())
@@ -12,8 +13,6 @@ mongoose.connect(
 	{useNewUrlParser: true, useUnifiedTopology: true}
 )
 
-app.get('*', (req, res) => {
-	res.send('Funciona!')
-})
+app.use('/api/posts', PostsController)
 
 module.exports = app

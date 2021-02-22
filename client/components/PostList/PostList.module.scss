@@ -1,0 +1,36 @@
+.post {
+	max-width: 100vw;
+	height: 64px;
+	border-bottom: 1px solid #333;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: #222;
+	text-decoration: none;
+	&:hover {
+		opacity: 0.95;
+		cursor: pointer;
+		.post--title {
+			text-decoration: underline;
+		}
+	}
+	&--resume{
+		flex: 3;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding-left: 32px;
+	}
+	&--title {
+		color: #eee;
+		margin-right: 8px;
+	}
+	&--author {
+		color: #999;
+		font-weight: normal;
+	}
+	&--created_at {
+		flex: 1;
+		color: #eee;
+	}
+}

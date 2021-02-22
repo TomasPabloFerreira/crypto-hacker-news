@@ -1,0 +1,30 @@
+.header {
+	position: fixed;
+	height: 250px;
+	width: 100vw;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	margin: 0;
+	padding: 0;
+	padding-left: 100px;
+
+	background-color: #333;
+}
+
+.header--text {
+	&__title {
+		color: #eee;
+		font-weight: normal;
+		font-size: 84px;
+		margin: 0;
+	}
+	&__subTitle {
+		color: #eee;
+		font-weight: normal;
+		font-size: 24px;
+		margin: 0;
+	}
+}

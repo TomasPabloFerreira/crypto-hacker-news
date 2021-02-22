@@ -1,5 +1,5 @@
 import express from 'express'
-import PostsUpdater from '../services/PostsCreator'
+import PostsUpdater from '../services/PostsUpdater'
 import { AlgoliaPostsType } from '../types'
 import { Posts } from '../entities'
 
@@ -15,8 +15,8 @@ router.post('/', (req, res) => {
 		.then(x => res.status(201).send(x))
 })
 
-router.put('/', (req: AlgoliaPostsType[], res) => {
-	const result: Boolean = PostsUpdater(req)
+router.put('/', async (req, res) => {
+	const result: Boolean = await PostsUpdater()
 	if(result) res.status(204).send()
 	else res.status(400).send()
 })

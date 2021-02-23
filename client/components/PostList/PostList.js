@@ -24,7 +24,7 @@ const PostList = ({ posts }) => {
 	}
 
 	return filteredPosts.map(x => (
-		<a className={styles.post} href={x.url} target="_blank">
+		<a  key={x._id} className={styles.post} href={x.url} target="_blank">
 			<span className={styles['post--resume']}>
 				<h3 className={styles['post--title']}>{x.title}</h3>
 				<h3 className={styles['post--author']}>- {x.author} -</h3>

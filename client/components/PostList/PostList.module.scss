@@ -7,11 +7,15 @@
 	align-items: center;
 	background-color: #222;
 	text-decoration: none;
+	padding: 0 64px;
 	&:hover {
 		opacity: 0.95;
 		cursor: pointer;
 		.post--title {
 			text-decoration: underline;
+		}
+		.post--button {
+			visibility: visible;
 		}
 	}
 	&--resume{
@@ -19,7 +23,6 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		padding-left: 32px;
 	}
 	&--title {
 		color: #eee;
@@ -32,5 +35,16 @@
 	&--created_at {
 		flex: 1;
 		color: #eee;
+	}
+	&--button {
+		visibility: hidden;
+		border: 0;
+		padding: 0;
+		background: transparent;
+		color: rgb(226, 71, 71);
+		&:hover{
+			cursor: pointer;
+			color: rgb(241, 122, 122);
+		}
 	}
 }

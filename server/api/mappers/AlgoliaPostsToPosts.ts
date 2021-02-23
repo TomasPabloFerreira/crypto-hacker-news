@@ -5,7 +5,8 @@ const AlgoliaPostToPost = (algoliaPost: AlgoliaPostsType): PostType => {
 		title: algoliaPost.story_title || algoliaPost.title || '',
 		author: algoliaPost.author || '',
 		created_at: algoliaPost.created_at || '',
-		url: algoliaPost.url || ''
+		url: algoliaPost.url || '',
+		objectID: algoliaPost.objectID
 	}
 }
 

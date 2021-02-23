@@ -13,7 +13,7 @@ type AlgoliaPosts = {
 	"parent_id": any,
 	"created_at_i": any,
 	"_tags": string[], 
-	"objectID": any,
+	"objectID": string,
 	"_highlightResult": {
 		"author": {
 			"value": string,

@@ -1,7 +1,7 @@
 import { Posts } from '../entities'
 
-const AllPostsEliminator = async (): Promise<Boolean> => {
-	await Posts.deleteMany({})
+const AllPostsEliminator = async (condition: any): Promise<Boolean> => {
+	await Posts.deleteMany(condition)
 	return true
 }
 

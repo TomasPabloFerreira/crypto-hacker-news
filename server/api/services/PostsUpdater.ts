@@ -6,9 +6,12 @@ import AlgoliaPostsToPostsMapper from '../mappers/AlgoliaPostsToPosts'
 
 const PostsUpdater = async (): Promise<Boolean> => {
 	const algoliaPosts = await AlgoliaPostsGetter()
-	AllPostsEliminator()
-	const newPosts = algoliaPosts.map(AlgoliaPostsToPostsMapper)
-	console.log(newPosts.length)
+	await AllPostsEliminator({ isDeleted: false })
+	const softDeleted = await Posts.find({ isDeleted: true })
+	const softDeletedIds = softDeleted.map(x => x['objectID'])
+	const newPosts = algoliaPosts
+		.filter(x => !softDeletedIds.includes(x.objectID))
+		.map(AlgoliaPostsToPostsMapper)
 	await Posts.create(newPosts)
 	return true
 }

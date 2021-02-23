@@ -22,6 +22,7 @@ router.put('/', async (req, res) => {
 
 router.delete('/', (req, res) => {
 	try {
+		if(!req.body._id) throw new Error()
 		Posts
 			.updateOne({ _id: req.body._id }, { isDeleted: true })
 			.then(x => res.status(204).send())
